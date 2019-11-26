@@ -8,16 +8,16 @@
         .DESCRIPTION
         This script is designed to run and fetch the information of backup job status for given hours.
 
-        .PARAMETER
-        .STRING. Subscription. Provide the subscription name.
+        .PARAMETER Subscriptions
+        .STRING. Subscriptions. Provide the subscription name.
 
-        .PARAMETER
+        .PARAMETER OutputPath
         .STRING. OutputPath. Provide the filepath to export information to a csv file name.
 
-        .PARAMETER
+        .PARAMETER LastBackupHours
         .Int. LastBackupHours. Provide the number of hours for which the backup details has to be fetched.
 
-        .PARAMETER
+        .PARAMETER Logpath
         .STRING. Logpath. Provide the filepath to track the logs.
 
         .EXAMPLE
