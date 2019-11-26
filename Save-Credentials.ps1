@@ -10,11 +10,11 @@ Function Save-Credential {
         the same account the credential can be decrypted. So it is advised to use a common account to encrypt the 
         credential. eg. service account.
 
-        .PARAMETER
+        .PARAMETER Path
         .STRING.Path. Provide the complete path with the name of the credential file to save the credential.
 
-        .PARAMETER
-        .PSCredential. A pop windows appears where the credentials has to be entered. eg. DOMAIN\user1 and password.
+        .PARAMETER Credential
+        .PSCredential. Credential. A pop windows appears where the credentials has to be entered. eg. DOMAIN\user1 and password.
     
         .NOTES
         AUTHOR                  DATE          VERSION          COMMENTS
