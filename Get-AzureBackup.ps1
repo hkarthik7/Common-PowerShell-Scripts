@@ -8,13 +8,13 @@
         .DESCRIPTION
         This script is designed to extract complete backup information for given subscription.
 
-        .PARAMETER
+        .PARAMETER Subscriptions
         .STRING Array. Subscriptions. Provide the subscription name.
 
-        .PARAMETER
+        .PARAMETER ExportPath
         .STRING. ExportPath. Provide the filepath to export information to a csv file name.
 
-        .PARAMETER
+        .PARAMETER Logpath
         .STRING. Logpath. Provide the filepath to track the logs.
 
         .EXAMPLE
