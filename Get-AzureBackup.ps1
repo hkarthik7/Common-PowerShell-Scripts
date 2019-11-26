@@ -21,9 +21,9 @@
         Get-AzureBackup -Subscription ("Subscription Name","Subscription Name1") -ExportPath "C:\Temp" -LogPath "C:\Temp" -Verbose
 
         .NOTES
-            Author						Version			Date			Notes
-            --------------------------------------------------------------------------------------------------------------------
-            harish.b.karthic		    v1.0			12/09/2019		Initial script
+        Author						Version			Date			Notes
+        --------------------------------------------------------------------------------------------------------------------
+        harish.b.karthic		    v1.0			12/09/2019		Initial script
 
     #>
 
