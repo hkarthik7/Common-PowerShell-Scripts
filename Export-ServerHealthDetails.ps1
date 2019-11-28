@@ -126,12 +126,12 @@
                 $Hash = [PSCustomObject]@{
                     
                     ServerName = $Server
-                    AverageCPUUsage = $CPU.Average
-                    AverageMemoryUsage = $Memory.MemoryUsage
-                    DeviceID = $DeviceID
-                    TotalVolumeSize = $TotalDiskSize
-                    DiskSpaceUsage = $DiskSpace
-                    StoppedServices = ($StoppedServices).TrimEnd()
+                    CPUUsage = $CPU.Average
+                    MemoryUsage = $Memory.MemoryUsage
+                    DriveID = $DeviceID
+                    "TotalVolumeSize(GB)" = $TotalDiskSize
+                    "FreeSpaceAvailable(GB)" = $DiskSpace
+                    StoppedAutomaticServices = ($StoppedServices).TrimEnd()
                     UpTime = $UptimeMessage
                                   
                 }
