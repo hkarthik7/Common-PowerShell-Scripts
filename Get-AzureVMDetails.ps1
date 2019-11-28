@@ -2,10 +2,10 @@
     <#
 
         .SYNOPSIS
-        Gets VM name,IP and other information from Azure portal.
+        Gets VM name, resource groups and other information from Azure portal.
 
         .DESCRIPTION
-        This script extracts the VM name, IP and other information from Azure portal for given subscription.
+        This script extracts the VM name, resource groups and other information from Azure portal for given subscription.
         Provide the servers in a text file to import information only for those servers. If the inpufile
         is not given then the script extracts for the given subscription.
 
