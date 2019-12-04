@@ -1,22 +1,22 @@
 ﻿Function Export-ServerHealthDetails {
     <#
         .SYNOPSIS
-        .This script exports the basic server health details.
+        This script exports the basic server health details.
 
         .DESCRIPTION
-        .This is an advanced PowerShell script which exports servers health details and projects the data
+        This is an advanced PowerShell script which exports servers health details and projects the data
         in a CSV report. This exports basic details such as server's uptime, automatic services which
         are in stopped state, average CPU & Memory usage and disk usage details.
 
         .PARAMETER InputFile
-        .String. Path to inputfile where the server names are listed and saved. This has to be a text
+        String. Path to inputfile where the server names are listed and saved. This has to be a text
         file and should contain only server names.
 
         .PARAMETER ExportPath
-        .String. Path to export the report file.
+        String. Path to export the report file.
 
         .PARAMETER LogPath
-        .String. Path to save the logfile.
+        String. Path to save the logfile.
 
         .EXAMPLE
         Export-ServerHealthDetails -InputFile C:\TEMP\servers.txt -ExportPath C:\TEMP -LogPath C:\TEMP -Verbose

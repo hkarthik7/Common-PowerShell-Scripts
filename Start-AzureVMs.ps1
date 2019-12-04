@@ -2,27 +2,27 @@
     
     <#
         .SYNOPSIS
-        .This script is to automatically power on the Azure VMs.
+        This script is to automatically power on the Azure VMs.
 
         .DESCRIPTION
-        .This script is designed to automatically power on the Azure VMs in the portal.
+        This script is designed to automatically power on the Azure VMs in the portal.
         It can be used to power on multiple VMs.
         Make sure that the input csv file contains servers under "Name" column and resource
         groups under "ResourceGroupName" coulumn. Please specify the resource group name
         corresponding to the VM in which the VM is placed.
 
         .PARAMETER Subscription
-        .String. Provide the subscription from which the servers has to be powered on.
+        String. Provide the subscription from which the servers has to be powered on.
 
         .PARAMETER InputFilePath
-        .String. Provide the path of input csv file where all the servers are saved.
+        String. Provide the path of input csv file where all the servers are saved.
         Example : C:\TEMP\Servers.csv.The Servers.csv file should contain servers and resource group name.
 
         .PARAMETER ExportPath
-        .String. Provide the path to export the results.
+        String. Provide the path to export the results.
 
         .PARAMETER LogPath
-        .String. Provide the path to export the log information.
+        String. Provide the path to export the log information.
 
         .EXAMPLE
         Start-AzureVMs -Subscription "Subscription Name" -InputFilePath "C:\TEMP\Servers.csv" -ExportPath "C:\TEMP" -LogPath "C:\TEMP" -Verbose

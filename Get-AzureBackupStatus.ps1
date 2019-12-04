@@ -9,16 +9,16 @@
         This script is designed to run and fetch the information of backup job status for given hours.
 
         .PARAMETER Subscriptions
-        .STRING. Subscriptions. Provide the subscription name.
+        STRING. Subscriptions. Provide the subscription name.
 
         .PARAMETER OutputPath
-        .STRING. OutputPath. Provide the filepath to export information to a csv file name.
+        STRING. OutputPath. Provide the filepath to export information to a csv file name.
 
         .PARAMETER LastBackupHours
-        .Int. LastBackupHours. Provide the number of hours for which the backup details has to be fetched.
+        Int. LastBackupHours. Provide the number of hours for which the backup details has to be fetched.
 
         .PARAMETER Logpath
-        .STRING. Logpath. Provide the filepath to track the logs.
+        STRING. Logpath. Provide the filepath to track the logs.
 
         .EXAMPLE
         Get-AzureBackupStatus -Subscriptions "Subscription Name","Subscription Name 2" -LastBackupHours 48 -OutputPath "C:\Temp" -LogPath "C:\Temp" -Verbose

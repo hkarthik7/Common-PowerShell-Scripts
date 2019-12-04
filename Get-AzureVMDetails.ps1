@@ -9,14 +9,14 @@
         Provide the servers in a text file to import information only for those servers. If the inpufile
         is not given then the script extracts for the given subscription.
 
-        .PARAMETER
-        .STRING. Subscription. Provide the subscription name.
+        .PARAMETER Subscription
+        STRING. Subscription. Provide the subscription name.
 
-        .PARAMETER
-        .STRING. ExportPath. Provide the filepath to export information to a csv file name.
+        .PARAMETER ExportPath
+        STRING. ExportPath. Provide the filepath to export information to a csv file name.
 
-        .PARAMETER
-        .STRING. Logpath. Provide the filepath to track the logs.
+        .PARAMETER Logpath
+        STRING. Logpath. Provide the filepath to track the logs.
 
         .EXAMPLE
         Get-AzureVMDetails -Subscription "Subscription Name" -ExportPath "C:\Path\to\csvfile.csv" -LogPath "C:\Path\to\logfile" -Verbose

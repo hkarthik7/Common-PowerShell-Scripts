@@ -9,13 +9,13 @@
         This script is designed to extract complete backup information for given subscription.
 
         .PARAMETER Subscriptions
-        .STRING Array. Subscriptions. Provide the subscription name.
+        STRING Array. Subscriptions. Provide the subscription name.
 
         .PARAMETER ExportPath
-        .STRING. ExportPath. Provide the filepath to export information to a csv file name.
+        STRING. ExportPath. Provide the filepath to export information to a csv file name.
 
         .PARAMETER Logpath
-        .STRING. Logpath. Provide the filepath to track the logs.
+        STRING. Logpath. Provide the filepath to track the logs.
 
         .EXAMPLE
         Get-AzureBackup -Subscription ("Subscription Name","Subscription Name1") -ExportPath "C:\Temp" -LogPath "C:\Temp" -Verbose
