@@ -47,7 +47,7 @@
     begin {
         
         #initialise function variables
-        $funtionName = $MyInvocation.MyCommand.Name
+        $functionName = $MyInvocation.MyCommand.Name
         $ExportPath = $ExportPath.Trim("\") + "\Test-ServerConnection_$(Get-Date -f ddMMyyy).html"
         $LogFile = $LogPath.Trim("\") + "\Test-ServerConnection_$(Get-Date -f ddMMyyy).log"
         
