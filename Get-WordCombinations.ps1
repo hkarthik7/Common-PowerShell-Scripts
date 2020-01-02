@@ -61,6 +61,33 @@ Function Find-StringPermutations($PermutationWord) {
     }
 }
 
+# Function to get the synonyms of generated words
+Function Get-Synonyms($Words) {
+
+    $result = @()
+
+    foreach($Word in $Words) {
+    
+        try {
+            $WebRequest = Invoke-WebRequest -Uri "https://www.synonym.com/synonyms/$($Word)"
+
+            $Synonyms = ($WebRequest.ParsedHtml.IHTMLDocument2_body.getElementsByClassName("card-content") `
+            | Select-Object innerText -First 2 -ExpandProperty innerText)[1]
+            $Synonyms = $Synonyms.Replace("  ",",").TrimEnd(",") -split ","
+
+            $Hash = [PSCustomObject]@{
+                "Word" = $Word
+                "Synonyms" = $Synonyms
+            }
+            $result += $Hash
+        }
+        catch {
+            Write-Host "No Synonyms for the word $($Word). May be mispelled or a typo, please check the word and try again."
+        }
+    }
+        return $result
+}
+
 # region Execute Functions
 
 # Create alphabets library (Global variables)
@@ -85,9 +112,18 @@ Write-Host "Possible number of Combinations from the formed word $($newword) is 
 $FinalWord = Find-RepeatedLetters -repeatedword $newword
 
 # Find all possible combinations of letters in the word
-Find-StringPermutations -PermutationWord $FinalWord
+$AllCombinations = Find-StringPermutations -PermutationWord $FinalWord
+Write-Host "The combinations are :" -ForegroundColor Green
+
+$HashCombinations = @{
+    "Word Combinations" = $AllCombinations -join ","
+}
+
+$HashCombinations
+
+#Find Synonyms for all words generated
+Get-Synonyms -Words $AllCombinations
 
 # endregion Execute Functions
 
-## Additional Notes
-## TODO : Check the combinations against an English dictionary to know the meaning of formed meaningful words
+##TODO : Make the script more robust and add logging and debugging functionality.
