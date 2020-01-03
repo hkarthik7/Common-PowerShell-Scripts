@@ -1,3 +1,28 @@
+<#
+    .SYNOPSIS
+    This script find the synonyms of all created string permutations
+    for given the number.
+
+    .DESCRIPTION
+    This script is designed to pick the given number of alphabets randomly
+    and generates all possible string permutations or cominations and
+    find the synonyms for the formed meaningful words.
+
+    Eg., If number 3 is entered and the script has picked abc randomly
+    from the alphabets library then it forms words combinations like
+    abc/acb/bac/bca/cab/cba and finds the synonyms for these words.
+
+    .NOTES
+    Author						Version			Date			Notes
+    --------------------------------------------------------------------------------------------------------------------
+    harish.b.karthic		    v1.0			02/01/2020		Initial script and commit
+    harish.b.karthic		    v1.1			02/01/2020		Added Synonyms functions
+    harish.b.karthic		    v1.2			03/01/2020		Minor changes
+    harish.b.karthic		    v1.3			03/01/2020		Added help content
+
+
+#>
+
 # function to pick random letters from alphabet library
 Function Get-Alphabets($Number){
 
