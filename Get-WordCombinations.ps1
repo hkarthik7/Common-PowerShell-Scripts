@@ -76,13 +76,17 @@ Function Get-Synonyms($Words) {
             $Synonyms = $Synonyms.Replace("  ",",").TrimEnd(",") -split ","
 
             $Hash = [PSCustomObject]@{
-                "Word" = $Word
+                "Words" = $Word
                 "Synonyms" = $Synonyms
             }
             $result += $Hash
         }
         catch {
-            Write-Host "No Synonyms for the word $($Word). May be mispelled or a typo, please check the word and try again."
+            $Hash = [PSCustomObject]@{
+                "Words" = $Word
+                "Synonyms" = "No synonym for the word!"
+            }
+            $result += $Hash
         }
     }
         return $result
@@ -113,17 +117,9 @@ $FinalWord = Find-RepeatedLetters -repeatedword $newword
 
 # Find all possible combinations of letters in the word
 $AllCombinations = Find-StringPermutations -PermutationWord $FinalWord
-Write-Host "The combinations are :" -ForegroundColor Green
-
-$HashCombinations = @{
-    "Word Combinations" = $AllCombinations -join ","
-}
-
-$HashCombinations
+Write-Host "The combinations are : $($AllCombinations -join ",")" -ForegroundColor Green
 
 #Find Synonyms for all words generated
 Get-Synonyms -Words $AllCombinations
 
 # endregion Execute Functions
-
-##TODO : Make the script more robust and add logging and debugging functionality.
