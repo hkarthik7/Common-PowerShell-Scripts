@@ -17,6 +17,9 @@
         .EXAMPLE
         Start-ProgramInElevatedMode -Program "powershell_ise.exe" -LogPath "C:\TEMP" -Verbose
 
+        .LINK
+        https://github.com/hkarthik7
+
         .NOTES
         Author						Version			Date			Notes
         --------------------------------------------------------------------------------------------------------------------
