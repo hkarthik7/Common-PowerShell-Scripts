@@ -7,3 +7,8 @@ The scripts here are cross-platform compatible which are developed as `advanced 
 Added `StringManager_v2.0` module with a minor update to the previous version. To download the latest version visit powershell gallery.
 This module is added with the functionality of string manipulation as the older version of StringManager's `GetSynonyms` functionality
 won't work if IE isn't configured. 
+  To download the `StringManager_v2.0` please download the zip file or clone and :
+    - Unzip the file
+    - Modify the name of the folder to `StringManager`
+    - Place it under any of PSModule Path
+    - Import it in the session and work with it
