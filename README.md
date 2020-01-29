@@ -11,6 +11,6 @@ won't work if IE isn't configured.
  To download the `StringManager_v2.0` please download the zip file or clone and
  
       - Unzip the file
-      - Modify the name of the folder to `StringManager`
+      - Modify the name of the folder to StringManager
       - Place it under any of PSModule Path
       - Import it in the session and work with it
