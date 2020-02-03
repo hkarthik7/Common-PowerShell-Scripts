@@ -1,0 +1,15 @@
+# Azure pipeline
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise Subscription – MPN(fcade197-54b7-4349-a210-e4d50c61ad97)'
+    ScriptType: 'FilePath'
+    ScriptPath: 'Scripts\Verified-Scripts\Export-SqlDB.ps1'
+    azurePowerShellVersion: 'LatestVersion'
