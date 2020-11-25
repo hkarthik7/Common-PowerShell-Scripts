@@ -7,7 +7,7 @@ workflow Get-WindowsStatus {
         [Parameter(Mandatory = $true)]
         [string] $ExportPath,
 
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $false)]
         [pscredential] $Credential,
 
         [int] $HopCount = 2
@@ -23,6 +23,7 @@ workflow Get-WindowsStatus {
     # assuming that the servers are in text file or in csv without any headers
     $servers = Get-Content -Path $InputPath
     $result = @()
+
     InlineScript { $sessionOption = New-PSSessionOption }
 
     Write-Verbose "[$(Get-Date -Format s)] : $functionName : Begin Function.."
@@ -44,7 +45,14 @@ workflow Get-WindowsStatus {
 
                 $windowsStatus = Receive-Job -Id $job.Id
 
-                $windowsStatus | Export-Csv -Path "$($using:tempPath)\$($using:server).csv" -NoTypeInformation -Force
+                $h = [PSCustomObject]@{
+                    Server = $using:server
+                    Name = $windowsStatus.Name
+                    Description = $windowsStatus.Description
+                    WindowsStatus = if ($windowsStatus.LicenseStatus -eq 1) { "Active" } else { "NotActivated" }
+                }
+
+                $h | Export-Csv -Path "$($using:tempPath)\$($using:server).csv" -NoTypeInformation -Force
             }
         }
     }
@@ -63,4 +71,4 @@ workflow Get-WindowsStatus {
     Write-Verbose "[$(Get-Date -Format s)] : $functionName : End Function.." 
 }
 
-Get-WindowsStatus -InputPath "C:\TEMP\servers.txt" -ExportPath "C:\TEMP" -Verbose
+Get-WindowsStatus -InputPath "C:\TEMP\servers.txt" -ExportPath "C:\TEMP" -Credential ([pscredential]::new("domain\username", ("password" | ConvertTo-SecureString -AsPlainText -Force))) -Verbose
