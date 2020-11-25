@@ -37,7 +37,7 @@ workflow Get-WindowsStatus {
             InlineScript {
                 $job = Invoke-Command `
                         -AsJob `
-                        -Credential $using:Credential
+                        -Credential $using:Credential `
                         -SessionOption $using:sessionOption `
                         -ComputerName $using:server `
                         -ScriptBlock { Get-CimInstance SoftwareLicensingProduct| Where-Object { $_.LicenseStatus -eq 1 } | Select-Object Name, Description, LicenseStatus } | Wait-Job
