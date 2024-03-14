@@ -1,0 +1,2 @@
+ResourceGroupName,StorageAccountName,KeyVaultName,KeyVaultSecretName,KeyName,ExpiryInMonth
+myResourceGroup,simpletestaccount,myKeyVault,StorageAccountKey2,key2,3
